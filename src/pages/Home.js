@@ -12,7 +12,7 @@ const Home = () => {
    console.log(lists);
    const email = user?.email;
    useEffect(() => {
-      fetch(`http://localhost:4000/list?userEmail=${email}`)
+      fetch(`https://things-todo-react.herokuapp.com/list?userEmail=${email}`)
          .then((res) => res.json())
          .then((data) => setLists(data));
    }, [lists, email]);
@@ -32,7 +32,7 @@ const Home = () => {
       };
       if (user) {
          if (list !== "") {
-            fetch("http://localhost:4000/list", {
+            fetch("https://things-todo-react.herokuapp.com/list", {
                method: "POST",
                headers: {
                   "content-type": "application/json",
@@ -51,15 +51,15 @@ const Home = () => {
             toast.error("Please write your todo!");
          }
       } else {
-          toast.error("Please Login to add todo!");
-          setLoading(false);
+         toast.error("Please Login to add todo!");
+         setLoading(false);
       }
    };
 
    // Mark as complete
 
    const markAsComplete = (id) => {
-      fetch(`http://localhost:4000/list/${id}`, {
+      fetch(`https://things-todo-react.herokuapp.com/list/${id}`, {
          method: "PATCH",
          body: JSON.stringify({
             status: "complete",
@@ -69,16 +69,16 @@ const Home = () => {
          },
       })
          .then((response) => response.json())
-         .then((json) => console.log(json));
+         .then((json) => toast.success("Todo completed!"));
    };
 
    // Delete List
    const deleteList = (id) => {
-      fetch(`http://localhost:4000/list/${id}`, {
+      fetch(`https://things-todo-react.herokuapp.com/list/${id}`, {
          method: "DELETE",
       })
          .then((res) => res.json())
-         .then((data) => console.log(data));
+         .then((data) => toast.success("Todo deleted!"));
    };
    return (
       <div className=" px-5">

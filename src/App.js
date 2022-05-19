@@ -14,7 +14,11 @@ function App() {
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="login" element={<Login></Login>}></Route>
          </Routes>
-         <ToastContainer position="top-center"></ToastContainer>
+         <ToastContainer
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar={true}
+         ></ToastContainer>
          <Footer></Footer>
       </div>
    );

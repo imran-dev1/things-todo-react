@@ -17,8 +17,8 @@ const Login = () => {
    }
 
    return (
-      <div>
-         <div className="shadow-lg rounded-lg border p-10">
+      <div className="flex justify-center items-center py-24">
+         <div className="shadow-lg rounded-lg border p-10 bg-base-100">
             <h2 className="text-2xl mb-10">Login</h2>
             <button
                onClick={() => signInWithGoogle()}
