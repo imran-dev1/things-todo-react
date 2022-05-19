@@ -105,7 +105,7 @@ const Home = () => {
             </button>
          </form>
 
-         <div class="mx-auto overflow-x-auto max-w-3xl w-full mb-28">
+         <div class="mx-auto overflow-x-auto max-w-3xl w-full mb-36">
             <table class="table table-zebra w-full">
                <thead>
                   <tr>
